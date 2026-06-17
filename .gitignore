@@ -1,0 +1,35 @@
+# Dependencias
+node_modules/
+
+# Artefactos de Hardhat
+artifacts/
+cache/
+coverage/
+coverage.json
+typechain-types/
+
+# Variables de entorno y secretos (¡NUNCA subir!)
+.env
+.env.local
+*.pem
+*.key
+
+# Nota: frontend/deployment.json SÍ se versiona a propósito.
+# La DApp hospedada en Amplify lo necesita para conocer la dirección y el ABI
+# del contrato. Solo contiene datos públicos (address + ABI + red), nunca secretos.
+# Regenéralo con `npm run deploy:sepolia` y vuelve a commitearlo tras cada redespliegue.
+
+# Terraform
+infra/terraform/.terraform/
+infra/terraform/*.tfstate
+infra/terraform/*.tfstate.*
+infra/terraform/*.tfvars
+!infra/terraform/*.tfvars.example
+infra/terraform/.terraform.lock.hcl
+crash.log
+
+# Sistema operativo / editores
+.DS_Store
+.vscode/
+.idea/
+*.log

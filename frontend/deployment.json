@@ -1,0 +1,270 @@
+{
+  "network": "sepolia",
+  "chainId": 11155111,
+  "address": "0x0D8ac2Af6b72eF68b136c2D36a9152cDf5c2BC44",
+  "deployedAt": "2026-06-16T16:23:13.805Z",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "CertificadoNoExiste",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "CertificadoYaRevocado",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "DatosVacios",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "DireccionInvalida",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NoEsEmisorAutorizado",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NoEsPropietario",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "hashCertificado",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "nombreEstudiante",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "curso",
+          "type": "string"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "emisor",
+          "type": "address"
+        }
+      ],
+      "name": "CertificadoEmitido",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "hashCertificado",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "emisor",
+          "type": "address"
+        }
+      ],
+      "name": "CertificadoRevocado",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "emisor",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "por",
+          "type": "address"
+        }
+      ],
+      "name": "EmisorAutorizado",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "emisor",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "por",
+          "type": "address"
+        }
+      ],
+      "name": "EmisorRevocado",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "emisor",
+          "type": "address"
+        }
+      ],
+      "name": "autorizarEmisor",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "emisorAutorizado",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "nombreEstudiante",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "curso",
+          "type": "string"
+        }
+      ],
+      "name": "emitirCertificado",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "hashCertificado",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "propietario",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "hashCertificado",
+          "type": "bytes32"
+        }
+      ],
+      "name": "revocarCertificado",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "emisor",
+          "type": "address"
+        }
+      ],
+      "name": "revocarEmisor",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "hashCertificado",
+          "type": "bytes32"
+        }
+      ],
+      "name": "verificarCertificado",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "existe",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "valido",
+          "type": "bool"
+        },
+        {
+          "internalType": "string",
+          "name": "nombreEstudiante",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "curso",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "emisor",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "fechaEmision",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
+}
